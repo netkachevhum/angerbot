@@ -82,4 +82,4 @@ print(now_utc)
 updater.start_polling()
 # важно указывать время старта в utc -- x
 j = updater.job_queue
-reperater = j.run_repeating(send_message,interval=3600)
+reperater = j.run_repeating(send_message,interval=60)
