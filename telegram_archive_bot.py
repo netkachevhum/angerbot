@@ -15,7 +15,7 @@ channel_id = "@archiveofanger"
 #bot.send_message(channel_id,"finally I can post via pyhton, fuck you")
 
 #коэффициент, который влияет на количество цензуры в предложении
-start_day = datetime.date(2022,6,13)
+start_day = datetime.date(2022,6,20)
 censorship = (datetime.date.today()- start_day).days
 print(censorship)
 
