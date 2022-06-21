@@ -15,12 +15,12 @@ channel_id = "@archiveofanger"
 #bot.send_message(channel_id,"finally I can post via pyhton, fuck you")
 
 #коэффициент, который влияет на количество цензуры в предложении
-start_day = datetime.date(2022,6,12)
+start_day = datetime.date(2022,6,13)
 censorship = (datetime.date.today()- start_day).days
 print(censorship)
 
 # количество дней, за которое программа приходит к полному цензурированию
-full_cycle = 30
+full_cycle = 10
 censor_coeff = censorship / full_cycle
 
 
@@ -65,8 +65,6 @@ def time_censor(string, censor_coeff):
             new_string = new_string+symb
     return(new_string)
 
-print(time_censor(get_censored("Я ненавижу войну, те кто ее развязал -- пидорасы"),0.9))
-
 def send_message(context: CallbackContext):
     global censor_coeff
     if censor_coeff < 1:
@@ -82,4 +80,4 @@ print(now_utc)
 updater.start_polling()
 # важно указывать время старта в utc -- x
 j = updater.job_queue
-reperater = j.run_repeating(send_message,interval=60)
+reperater = j.run_repeating(send_message,interval=14400)
