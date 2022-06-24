@@ -38,7 +38,7 @@ def get_censored(sentence):
         new_word = word
         for root in censored_roots:
             if word.lower().startswith(root):
-                new_word = "*"*len(root)+word[len(root):]
+                new_word = "*"*len(word)
         new_sentence.append(new_word)
     return " ".join(new_sentence)
 
